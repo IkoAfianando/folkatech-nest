@@ -55,6 +55,8 @@ $ npm run start:prod
 $ npm run test
 ```
 
+## Author
+Iko Afianando
 
 ## License
 
