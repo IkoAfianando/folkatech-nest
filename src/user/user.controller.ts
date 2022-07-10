@@ -31,6 +31,22 @@ export class UserController {
         return this.userService.get(id);
     }
 
+    @Get(':email')
+    getByEmail(@Param('email') email: string) {
+        return this.userService.getByEmail(email);
+    }
+
+    @Get(':accountNumber')
+    getByAccountNumber(@Param('accountNumber') accountNumber: string) {
+        return this.userService.getByAccountNumber(accountNumber);
+    }
+
+    @Get(':identityNumber')
+    getByIdentityNumber(@Param('identityNumber') identityNumber: string) {
+        return this.userService.getByIdentityNumber(identityNumber);
+    }
+
+
     @Put(':id')
     update(
         @Param('id') id: string,

@@ -20,6 +20,18 @@ export class UserService {
         return await this.userModel.findOne({ _id: id });
     }
 
+   async getByEmail(email: string): Promise<UserDocument> {
+        return await this.userModel.findOne({ emailAddress: email });
+    }
+
+    async getByAccountNumber(accountNumber: string): Promise<UserDocument> {
+        return await this.userModel.findOne({ accountNumber });
+    }
+
+    async getByIdentityNumber(identityNumber: string): Promise<UserDocument> {
+        return await this.userModel.findOne({ identityNumber });
+    }
+
     async update(id: string, data: Partial<UserDocument>): Promise<UserDocument> {
         return await this.userModel.findByIdAndUpdate(id, data, { new: true });
     }
